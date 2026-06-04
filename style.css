@@ -32,6 +32,12 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -873,9 +879,6 @@ footer {
     height: 100vh;
     width: min(280px, 80vw);
 
-    transform: translateX(100%);
-    transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
-
     background: white;
     flex-direction: column;
     gap: 0;
@@ -883,10 +886,24 @@ footer {
     box-shadow: -8px 0 40px rgba(201, 24, 106, 0.15);
     border-left: 2px solid var(--rosa-claro);
     overflow-y: auto;
+
+    /* oculto completamente */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+
+    transition:
+        transform 0.35s cubic-bezier(0.77, 0, 0.175, 1),
+        opacity 0.25s ease,
+        visibility 0.25s ease;
     }
 
     .menu.activo {
+        visibility: visible;
+        opacity: 1;
         transform: translateX(0);
+        pointer-events: auto;
     }
 
     .menu li { border-bottom: 1px solid var(--rosa-palido); }
