@@ -867,22 +867,27 @@ footer {
     .logo-sub { display: none; }
 
     .menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: min(280px, 80vw);
-        background: white;
-        flex-direction: column;
-        gap: 0;
-        padding: 80px 28px 40px;
-        box-shadow: -8px 0 40px rgba(201, 24, 106, 0.15);
-        transition: right 0.35s cubic-bezier(0.77, 0, 0.175, 1);
-        border-left: 2px solid var(--rosa-claro);
-        overflow-y: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(280px, 80vw);
+
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 80px 28px 40px;
+    box-shadow: -8px 0 40px rgba(201, 24, 106, 0.15);
+    border-left: 2px solid var(--rosa-claro);
+    overflow-y: auto;
     }
 
-    .menu.activo { right: 0; }
+    .menu.activo {
+        transform: translateX(0);
+    }
 
     .menu li { border-bottom: 1px solid var(--rosa-palido); }
 
