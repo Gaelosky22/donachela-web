@@ -1,7 +1,4 @@
-/* ============================================
-   DOÑA CHELA — PASTELES Y MÁS
-   Diseño elegante, rosado y artesanal
-   ============================================ */
+
 
 :root {
     --rosa-fuerte:    #c9186a;
@@ -26,7 +23,7 @@
     --radio-grande:   40px;
 }
 
-/* BASE */
+
 *, *::before, *::after {
     margin: 0; padding: 0;
     box-sizing: border-box;
